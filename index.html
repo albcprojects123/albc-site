@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Construction Project Management | Cambridgeshire</title>
+  <meta name="description" content="Independent project management services for domestic construction projects across Cambridgeshire and surrounding counties, from £150,000 to £4m+." />
+  <style>
+    :root {
+      --navy: #10233f;
+      --blue: #1f5f8b;
+      --gold: #c89b3c;
+      --stone: #f4f1eb;
+      --text: #202833;
+      --muted: #667085;
+      --white: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    header {
+      background: rgba(16, 35, 63, 0.96);
+      color: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.15);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 0;
+      gap: 24px;
+    }
+
+    .brand {
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      font-size: 1.05rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.86);
+    }
+
+    .nav-links a:hover { color: var(--white); }
+
+    .hero {
+      background:
+        linear-gradient(120deg, rgba(16,35,63,0.94), rgba(31,95,139,0.82)),
+        url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1800&q=80') center/cover;
+      color: var(--white);
+      padding: 118px 0 98px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: #f0cc73;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.82rem;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      margin: 0 0 22px;
+      font-size: clamp(2.35rem, 5vw, 4.6rem);
+      line-height: 1.03;
+      letter-spacing: -0.04em;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 680px;
+      color: rgba(255,255,255,0.9);
+      margin: 0 0 32px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .button:hover { transform: translateY(-2px); }
+
+    .button-primary {
+      background: var(--gold);
+      color: #172033;
+      box-shadow: 0 10px 30px rgba(200,155,60,0.35);
+    }
+
+    .button-secondary {
+      border: 1px solid rgba(255,255,255,0.45);
+      color: var(--white);
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 24px;
+      padding: 28px;
+      backdrop-filter: blur(12px);
+    }
+
+    .hero-card strong {
+      display: block;
+      font-size: 2rem;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+
+    .hero-card span {
+      color: rgba(255,255,255,0.82);
+      display: block;
+      margin-bottom: 18px;
+    }
+
+    section { padding: 82px 0; }
+
+    .section-intro {
+      max-width: 760px;
+      margin-bottom: 42px;
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: clamp(1.8rem, 3vw, 2.7rem);
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      color: var(--navy);
+    }
+
+    .section-intro p {
+      color: var(--muted);
+      font-size: 1.08rem;
+      margin: 0;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid #e6e9ee;
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: 0 12px 36px rgba(16,35,63,0.06);
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      color: var(--navy);
+      font-size: 1.18rem;
+    }
+
+    .card p { margin: 0; color: var(--muted); }
+
+    .project-case-study {
+      padding: 0;
+      background: #fbfaf7;
+    }
+
+    .project-hero {
+      min-height: 72vh;
+      display: grid;
+      align-items: end;
+      color: var(--white);
+      background:
+        linear-gradient(180deg, rgba(9,20,38,0.08), rgba(9,20,38,0.82)),
+        url('images/suzys-view/external.jpg') center/cover;
+      padding: 140px 0 72px;
+    }
+
+    .project-hero h2 {
+      color: var(--white);
+      font-size: clamp(3rem, 7vw, 6.5rem);
+      margin-bottom: 16px;
+      letter-spacing: -0.06em;
+    }
+
+    .project-location {
+      font-size: clamp(1.25rem, 2vw, 1.8rem);
+      max-width: 560px;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 18px;
+    }
+
+    .project-subtitle {
+      max-width: 520px;
+      color: rgba(255,255,255,0.86);
+      font-size: 1.05rem;
+    }
+
+    .project-overview {
+      display: grid;
+      grid-template-columns: 1.1fr 1.4fr;
+      gap: 54px;
+      padding: 64px 0;
+      border-bottom: 1px solid #ddd6c8;
+    }
+
+    .project-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .stat {
+      border-left: 1px solid #d7cbb9;
+      padding-left: 20px;
+    }
+
+    .stat span {
+      display: block;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.72rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .stat strong {
+      color: var(--navy);
+      font-size: 1rem;
+    }
+
+    .case-row {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 64px;
+      align-items: center;
+      padding: 64px 0;
+      border-bottom: 1px solid #ddd6c8;
+    }
+
+    .case-copy h3 {
+      color: var(--navy);
+      font-size: clamp(1.6rem, 2.5vw, 2.4rem);
+      line-height: 1.1;
+      margin: 0 0 18px;
+      letter-spacing: -0.035em;
+    }
+
+    .case-copy .eyebrow {
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .case-copy p {
+      color: var(--muted);
+      margin: 0;
+      max-width: 480px;
+    }
+
+    .case-image {
+      width: 100%;
+      display: block;
+      border-radius: 2px;
+      box-shadow: 0 18px 42px rgba(16,35,63,0.16);
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+    }
+
+    .project-gallery-premium {
+      padding: 64px 0 82px;
+    }
+
+    .project-gallery-premium .eyebrow {
+      color: var(--gold);
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      display: block;
+    }
+
+    .project-cta-panel {
+      background: #f3eee5;
+      border: 1px solid #e2d7c6;
+      padding: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .project-cta-panel h3 {
+      margin: 0 0 6px;
+      color: var(--navy);
+      font-size: 1.45rem;
+    }
+
+    .project-cta-panel p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .strip {
+      background: var(--stone);
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .check-list {
+      display: grid;
+      gap: 14px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .check-list li {
+      background: var(--white);
+      border-radius: 14px;
+      padding: 16px 18px;
+      border-left: 4px solid var(--gold);
+      box-shadow: 0 8px 24px rgba(16,35,63,0.05);
+    }
+
+    .process {
+      counter-reset: step;
+      display: grid;
+      gap: 18px;
+    }
+
+    .process-item {
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .process-item::before {
+      counter-increment: step;
+      content: counter(step);
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: var(--white);
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+    }
+
+    .process-item h3 { margin: 0 0 4px; color: var(--navy); }
+    .process-item p { margin: 0; color: var(--muted); }
+
+    .cta {
+      background: var(--navy);
+      color: var(--white);
+      text-align: center;
+      padding: 82px 0;
+    }
+
+    .cta h2 { color: var(--white); }
+    .cta p {
+      color: rgba(255,255,255,0.82);
+      max-width: 720px;
+      margin: 0 auto 28px;
+      font-size: 1.08rem;
+    }
+
+    .contact-box {
+      margin-top: 30px;
+      display: inline-grid;
+      gap: 8px;
+      color: rgba(255,255,255,0.86);
+    }
+
+    footer {
+      background: #091426;
+      color: rgba(255,255,255,0.7);
+      padding: 28px 0;
+      font-size: 0.92rem;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 880px) {
+      .nav-links { display: none; }
+      .hero-grid,
+      .split,
+      .cards,
+      .project-overview,
+      .case-row,
+      .project-stats,
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero { padding: 88px 0 76px; }
+      section { padding: 64px 0; }
+      .project-hero { min-height: 62vh; padding: 90px 0 54px; }
+      .project-cta-panel { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#top">ALBC (Cambs) Ltd</a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#approach">Approach</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Domestic construction project management<br><span style="font-weight:400;letter-spacing:0.05em;text-transform:none;color:#f0cc73;opacity:0.9;">Trusted by private clients & architects</span></div>
+          <h1>Independent client-side oversight for high-value residential projects, from early strategy through to completion.</h1>
+          <p>Independent, discreet project management for high-value domestic construction projects across Cambridgeshire and surrounding counties. Delivering refined control over planning, procurement, coordination, cost and programme with a level of precision expected on premium residential builds.</p>
+          <div class="buttons">
+            <a class="button button-primary" href="mailto:albc@mail.com">Arrange a consultation</a>
+            <a class="button button-secondary" href="#services">View services</a>
+          </div>
+        </div>
+        <aside class="hero-card" aria-label="Project experience highlights">
+          <strong>£150k–£4m+</strong>
+          <span>Typical project values managed</span>
+          <strong>Cambridgeshire</strong>
+          <span>Plus surrounding counties</span>
+          <strong>Client-side support</strong>
+          <span>Practical, organised and commercially aware project leadership</span>
+        </aside>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-intro">
+          <h2>Project management for exceptional private residential projects.</h2>
+          <p>Whether you are planning a major extension, full refurbishment, new-build home or multi-phase residential project, I help bring structure, accountability and momentum to every stage.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <h3>Pre-construction planning</h3>
+            <p>Clarifying the brief, programme, budget, design responsibilities and procurement route before work starts on site.</p>
+          </article>
+          <article class="card">
+            <h3>Contractor coordination</h3>
+            <p>Managing communication between clients, architects, engineers, contractors, consultants and suppliers.</p>
+          </article>
+          <article class="card">
+            <h3>Cost and programme control</h3>
+            <p>Tracking budgets, variations, milestones and risks so decisions are made early and with confidence.</p>
+          </article>
+          <article class="card">
+            <h3>Site progress oversight</h3>
+            <p>Regular reviews, progress reporting and practical problem-solving to keep the project moving.</p>
+          </article>
+          <article class="card">
+            <h3>Client representation</h3>
+            <p>Acting as your organised, experienced point of contact when you need independent support and clear advice.</p>
+          </article>
+          <article class="card">
+            <h3>Completion and handover</h3>
+            <p>Supporting snagging, documentation, final account discussions and a smoother transition into occupation.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="project-case-study">
+      <div class="project-hero">
+        <div class="container">
+          <div class="eyebrow">Selected Project</div>
+          <h2>Suzy’s View</h2>
+          <div class="project-location">High Street, Cheveley, Newmarket CB8 9DQ</div>
+          <p class="project-subtitle">A detached four-bedroom new-build residence with detached garage, delivered with close client collaboration and a high level of finish.</p>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="project-overview">
+          <div>
+            <div class="eyebrow" style="color:var(--gold);">Project Overview</div>
+            <p>A privately commissioned forever home delivered from early groundworks through to completion, balancing technical build requirements with the client’s exact specification and finish expectations.</p>
+          </div>
+          <div class="project-stats">
+            <div class="stat"><span>Build Value</span><strong>£500,000</strong></div>
+            <div class="stat"><span>Completed</span><strong>August 2018</strong></div>
+            <div class="stat"><span>Property Type</span><strong>New-build detached home</strong></div>
+            <div class="stat"><span>Bedrooms</span><strong>4</strong></div>
+          </div>
+        </div>
+
+        <div class="case-row">
+          <div class="case-copy">
+            <div class="eyebrow">My Role</div>
+            <h3>Project Manager / Main Contractor</h3>
+            <p>Liaising with utilities providers, planners, local authorities, contractors and — critically — the client, ensuring their forever home was delivered precisely to specification.</p>
+          </div>
+          <img class="case-image" src="images/suzys-view/internal.jpg" alt="Bespoke oak staircase installation at Suzy’s View" />
+        </div>
+
+        <div class="case-row">
+          <div class="case-copy">
+            <div class="eyebrow">The Challenge</div>
+            <h3>Complex excavation and changing site conditions</h3>
+            <p>The changing topographical conditions made excavation depths a significant challenge in order to satisfy LBC requirements.</p>
+          </div>
+          <img class="case-image" src="images/suzys-view/fireplace.jpg" alt="Feature brick fireplace with oak beam at Suzy’s View" />
+        </div>
+
+        <div class="case-row">
+          <div class="case-copy">
+            <div class="eyebrow">The Outcome</div>
+            <h3>A high-end finish rarely seen in modern new-build construction</h3>
+            <p>Achieved a technically demanding finish through quality workmanship, careful sequencing and considered materials selection across the home.</p>
+          </div>
+          <img class="case-image" src="images/suzys-view/kitchen.jpg" alt="Open-plan kitchen installation at Suzy’s View" />
+        </div>
+
+        <div class="project-gallery-premium">
+          <div class="eyebrow">Project Gallery</div>
+          <div class="gallery-grid">
+            <img src="images/suzys-view/picture6.jpg"  
+            alt="Open-plan kitchen installation" />
+            <img src="images/suzys-view/picture5.jpg" alt="Bathroom tiling and sanitary installation" />
+            <img src="images/suzys-view/pump.jpg" alt="Open-plan living area nearing completion" />
+	    <img src="images/suzys-view/picture7.jpg" alt="Plant room and copper pipework installation" />
+	    <img src="images/suzys-view/picture10.jpg" alt="Plant room and copper pipework installation" />
+            <img src="images/suzys-view/picture8.jpg" alt="Plant room and copper pipework installation" />
+            <img src="images/suzys-view/Picture33.jpg" alt="Bespoke timber front door" />
+            <img src="images/suzys-view/dog.jpg" alt="Window and brickwork detailing" />
+            <img src="images/suzys-view/external.jpg" alt="Completed front elevation" />
+	    <img src="images/suzys-view/afireplace.jpg" alt="Roof tiling and dormer detail" />
+            <img src="images/suzys-view/picture15.jpg" alt="Roof tiling and dormer detail" />
+	    <img src="images/suzys-view/picture12.jpg" alt="Roof tiling and dormer detail" />
+	    <img src="images/suzys-view/picture18.jpg" alt="Roof tiling and dormer detail" />
+	    <img src="images/suzys-view/picture16.jpg" alt="Roof tiling and dormer detail" />
+            <img src="images/suzys-view/detail.jpg" alt="Close-up of masonry and stone detail" />
+          </div>
+        </div>
+
+        <div class="project-cta-panel">
+          <div>
+            <h3>Planning a new home or major residential project?</h3>
+            <p>ALBC (Cambs) Ltd provides the experience, management and attention to detail required to bring complex private projects to life.</p>
+          </div>
+          <a class="button button-primary" href="mailto:albc@mail.com">Get in touch</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="approach" class="strip">
+      <div class="container split">
+        <div>
+          <div class="section-intro">
+            <h2>A disciplined, high-level approach to complex private builds.</h2>
+            <p>Large domestic projects can involve many moving parts. My role is to reduce uncertainty, improve communication and give you clear visibility over progress, cost and risk.</p>
+          </div>
+          <ul class="check-list">
+            <li>Clear reporting and practical decision logs</li>
+            <li>Experienced communication with professional teams and trades</li>
+            <li>Early identification of programme, budget and quality risks</li>
+            <li>Flexible involvement from advisory support to full project management</li>
+          </ul>
+        </div>
+        <div class="process">
+          <div class="process-item">
+            <div>
+              <h3>Understand</h3>
+              <p>Review your project goals, current stage, budget, design information and immediate concerns.</p>
+            </div>
+          </div>
+          <div class="process-item">
+            <div>
+              <h3>Structure</h3>
+              <p>Set up the right project controls, reporting rhythm and responsibility matrix.</p>
+            </div>
+          </div>
+          <div class="process-item">
+            <div>
+              <h3>Manage</h3>
+              <p>Coordinate people, information, programme, cost and key actions throughout delivery.</p>
+            </div>
+          </div>
+          <div class="process-item">
+            <div>
+              <h3>Complete</h3>
+              <p>Drive snagging, close-out, documentation and final handover with focus and clarity.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contact">
+      <div class="container">
+        <h2>Planning or managing a significant domestic construction project?</h2>
+        <p>Get independent project management support before problems become expensive. Available for projects across Cambridgeshire, Suffolk, Norfolk, Hertfordshire, Bedfordshire, Northamptonshire and surrounding areas.</p>
+        <div class="buttons" style="justify-content:center;">
+          <a class="button button-primary" href="mailto:albc@mail.com">Email your project details</a>
+          <a class="button button-secondary" href="tel:+447771550672">Call 07771 550672</a>
+        </div>
+        <div class="contact-box">
+          <span>Email: albc@mail.com</span>
+          <span>Phone: 07771 550672</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <span>© 2026 ALBC (Cambs) Ltd. Construction Project Management.</span>
+      <span>Cambridgeshire and surrounding counties</span>
+    </div>
+  </footer>
+</body>
+</html>
